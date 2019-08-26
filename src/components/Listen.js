@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
+import { CSVLink, CSVDownload } from 'react-csv';
 export default class Listen extends React.Component {
   
   state = {
@@ -57,11 +58,7 @@ export default class Listen extends React.Component {
           }
       
     </table>
-
-    <Button variant="contained">
-      Descargar Archivo
-    </Button>
-    
+        <CSVLink data={this.state.persons} separator={";"} filename={"Datos_DQ.csv"} >Descargar datos</CSVLink>
     </div>
     )
   }
